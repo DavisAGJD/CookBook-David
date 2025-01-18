@@ -1,0 +1,41 @@
+name: design
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 0.0.1+1
+
+environment:
+  sdk: '>=2.19.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  transparent_image: ^2.0.0
+
+
+  english_words: ^4.0.0
+  provider: ^6.0.0
+  go_router: ^14.6.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets: 
+    - assets/loading.gif
+  fonts:
+    - family: Raleway
+      fonts:
+        - asset: assets/fonts/Raleway-italic.ttf
+        - asset: assets/fonts/Raleway-Regular.ttf
+          style: italic
+    - family: RobotoMono
+      fonts: 
+      - asset: assets/fonts/RobotoMono-Regular.ttf
+      - asset: assets/fonts/RobotoMono-Bold.ttf
+        weight: 700  
