@@ -1,4 +1,4 @@
-name: design
+name: cookbook_david
 description: A new Flutter project.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   transparent_image: ^2.0.0
+  web_socket_channel: ^2.4.0
 
 
   english_words: ^4.0.0

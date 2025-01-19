@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const NavigationApp());
-
 class NavigationApp extends StatelessWidget {
   const NavigationApp({super.key});
 

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'design.dart'; // Importa el archivo de diseño
-import 'images.dart'; // Importa el archivo de imágenes
-import 'list.dart';
-import 'forms.dart';
-import 'navigation.dart';
+import 'screens/design.dart'; // Importa el archivo de diseño
+import 'screens/images.dart'; // Importa el archivo de imágenes
+import 'screens/list.dart';
+import 'screens/forms.dart';
+import 'screens/navigation.dart';
+import 'screens/network.dart';
 
 void main() {
   runApp(MyApp());
@@ -115,6 +116,16 @@ class HomeScreen extends StatelessWidget {
                     ));
               },
               child: const Text('Navigation tareas'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const NetworkHomePage(),
+                    ));
+              },
+              child: const Text('Network tareas'),
             ),
           ],
         ),
