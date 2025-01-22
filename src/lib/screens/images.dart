@@ -68,7 +68,7 @@ class ImageFromInternetPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Image.network(
-        'https://via.placeholder.com/150', // URL de la imagen
+        'https://picsum.photos/250?image=9',
         loadingBuilder: (context, child, loadingProgress) {
           if (loadingProgress == null) return child;
           return CircularProgressIndicator(
@@ -77,6 +77,9 @@ class ImageFromInternetPage extends StatelessWidget {
                     loadingProgress.expectedTotalBytes!
                 : null,
           );
+        },
+        errorBuilder: (context, error, stackTrace) {
+          return const Text('Error al cargar la imagen');
         },
       ),
     );
@@ -90,9 +93,13 @@ class FadeInImagePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: FadeInImage.assetNetwork(
-        placeholder: 'assets/loading.gif', // Imagen local de carga
-        image: 'https://via.placeholder.com/150', // URL de la imagen
+        placeholder:
+            'assets/loading.gif', // Asegúrate de que esta imagen exista
+        image: 'https://picsum.photos/250?image=9',
         fit: BoxFit.cover,
+        imageErrorBuilder: (context, error, stackTrace) {
+          return const Text('Error al cargar la imagen');
+        },
       ),
     );
   }

@@ -60,7 +60,7 @@ class _NavigationHomePageState extends State<NavigationHomePage> {
           padding: EdgeInsets.zero,
           children: [
             const DrawerHeader(
-              decoration: BoxDecoration(color: Colors.blue),
+              decoration: BoxDecoration(color: Colors.green),
               child: Text('Drawer Header'),
             ),
             ListTile(
