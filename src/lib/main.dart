@@ -6,6 +6,7 @@ import 'screens/forms.dart';
 import 'screens/navigation.dart';
 import 'screens/network.dart';
 import 'screens/animation.dart';
+import 'screens/persistance.dart';
 
 void main() {
   runApp(MyApp());
@@ -91,118 +92,137 @@ class HomeScreen extends StatelessWidget {
       ),
       backgroundColor: Colors.white, // Fondo del menú en blanco
       builder: (BuildContext context) {
-        return Container(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              ListTile(
-                leading: const Icon(Icons.design_services,
-                    color: Colors.green), // Ícono verde
-                title: const Text(
-                  'Tareas Design',
-                  style: TextStyle(color: Colors.black), // Texto en negro
+        return SingleChildScrollView(
+          // Envuelve el contenido en un SingleChildScrollView
+          child: Container(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              mainAxisSize: MainAxisSize
+                  .min, // Asegura que el Column no ocupe más espacio del necesario
+              children: [
+                ListTile(
+                  leading: const Icon(Icons.design_services,
+                      color: Colors.green), // Ícono verde
+                  title: const Text(
+                    'Tareas Design',
+                    style: TextStyle(color: Colors.black), // Texto en negro
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const MyHomePage(title: "Tarea Designs")),
+                    );
+                  },
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            const MyHomePage(title: "Tarea Designs")),
-                  );
-                },
-              ),
-              ListTile(
-                leading:
-                    const Icon(Icons.image, color: Colors.green), // Ícono verde
-                title: const Text(
-                  'Tareas Images',
-                  style: TextStyle(color: Colors.black), // Texto en negro
+                ListTile(
+                  leading: const Icon(Icons.image,
+                      color: Colors.green), // Ícono verde
+                  title: const Text(
+                    'Tareas Images',
+                    style: TextStyle(color: Colors.black), // Texto en negro
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ImagesHomePage()),
+                    );
+                  },
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ImagesHomePage()),
-                  );
-                },
-              ),
-              ListTile(
-                leading:
-                    const Icon(Icons.list, color: Colors.green), // Ícono verde
-                title: const Text(
-                  'List tareas',
-                  style: TextStyle(color: Colors.black), // Texto en negro
+                ListTile(
+                  leading: const Icon(Icons.list,
+                      color: Colors.green), // Ícono verde
+                  title: const Text(
+                    'List tareas',
+                    style: TextStyle(color: Colors.black), // Texto en negro
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ListHomePage()),
+                    );
+                  },
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ListHomePage()),
-                  );
-                },
-              ),
-              ListTile(
-                leading:
-                    const Icon(Icons.edit, color: Colors.green), // Ícono verde
-                title: const Text(
-                  'Forms tareas',
-                  style: TextStyle(color: Colors.black), // Texto en negro
+                ListTile(
+                  leading: const Icon(Icons.edit,
+                      color: Colors.green), // Ícono verde
+                  title: const Text(
+                    'Forms tareas',
+                    style: TextStyle(color: Colors.black), // Texto en negro
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const FormsHomePage()),
+                    );
+                  },
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const FormsHomePage()),
-                  );
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.navigation,
-                    color: Colors.green), // Ícono verde
-                title: const Text(
-                  'Navigation tareas',
-                  style: TextStyle(color: Colors.black), // Texto en negro
+                ListTile(
+                  leading: const Icon(Icons.navigation,
+                      color: Colors.green), // Ícono verde
+                  title: const Text(
+                    'Navigation tareas',
+                    style: TextStyle(color: Colors.black), // Texto en negro
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const NavigationHomePage()),
+                    );
+                  },
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const NavigationHomePage()),
-                  );
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.network_wifi,
-                    color: Colors.green), // Ícono verde
-                title: const Text(
-                  'Network tareas',
-                  style: TextStyle(color: Colors.black), // Texto en negro
+                ListTile(
+                  leading: const Icon(Icons.network_wifi,
+                      color: Colors.green), // Ícono verde
+                  title: const Text(
+                    'Network tareas',
+                    style: TextStyle(color: Colors.black), // Texto en negro
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const NetworkHomePage()),
+                    );
+                  },
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const NetworkHomePage()),
-                  );
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.animation,
-                    color: Colors.green), // Ícono verde
-                title: const Text(
-                  'Animation tareas',
-                  style: TextStyle(color: Colors.black), // Texto en negro
+                ListTile(
+                  leading: const Icon(Icons.animation,
+                      color: Colors.green), // Ícono verde
+                  title: const Text(
+                    'Animation tareas',
+                    style: TextStyle(color: Colors.black), // Texto en negro
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AnimationHomePage()),
+                    );
+                  },
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const AnimationHomePage()),
-                  );
-                },
-              ),
-            ],
+                ListTile(
+                  leading: const Icon(Icons.all_inbox_rounded,
+                      color: Colors.green), // Ícono verde
+                  title: const Text(
+                    'Persistance tareas',
+                    style: TextStyle(color: Colors.black), // Texto en negro
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PersistenceHomePage()),
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         );
       },
